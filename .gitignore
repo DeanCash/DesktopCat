@@ -1,9 +1,9 @@
 # Other
 backup_boilerplate/
 final_format/
-# test_window.py
-# test.*
-# move_window.py
+test_window.py
+test.*
+move_window.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
