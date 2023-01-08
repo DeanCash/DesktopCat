@@ -21,7 +21,7 @@ The entry point if you want to run it manually is `main.py` which you can run li
 py main.py
 ```
 
-#### Ready Executable
+## Ready Executable
 If you don't have python, or don't want to install python, I have compiled the whole python project into a single executable
 
 **Note:** When trying to install the executable, your antivirus might block the download, probably because I used PyInstaller to compile the entire python source code into a single executable, and because the file is pretty big, so just beware of that.
