@@ -5,10 +5,10 @@
 Do you want a cat that keeps you company on your desktop? A cat that walks and plays around, and sometimes even steal your windows?
 Well look no further, you found what you  were looking for!
 
-### Installing Desktop Cat 
+## Installing Desktop Cat 
 > Note: Currently Desktop cat is currently only available on the `Windows` platform
 
-#### Installing from source code 
+### Installing from source code 
 If you want to download the source code and run it directly instead you can clone it with git like this:
 
 ```bat
