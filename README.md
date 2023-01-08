@@ -15,17 +15,17 @@ If you want to download the source code and run it directly instead you can clon
 git clone https://github.com/DeanCash/DesktopCat
 ```
 
-The entry point for running manually is `main.py` which you can run like this
+The entry point for running manually is `main.py` which you can run like this.
 
 ```bat
 py main.py
 ```
 
 ## Ready Executable
-If you don't have python, or don't want to install python, I have compiled the whole python project into a single executable
+If you don't have python, or don't want to install python, I have compiled the whole python project into a single executable.
 
 **Note:** When trying to install the executable, your antivirus might block the download, probably because I used PyInstaller to compile the entire python source code into a single executable, and because the file is pretty big, so just beware of that.
-If you don't trust it you can still download and run from source
+If you don't trust it you can still download and run from source.
 
 [download...](#)
 
