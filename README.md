@@ -15,7 +15,7 @@ If you want to download the source code and run it directly instead you can clon
 git clone https://github.com/DeanCash/DesktopCat
 ```
 
-The entry point if you want to run it manually is `main.py` which you can run like this
+The entry point for running manually is `main.py` which you can run like this
 
 ```bat
 py main.py
