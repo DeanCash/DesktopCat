@@ -4,6 +4,7 @@ final_format/
 test_window.py
 test.*
 move_window.py
+get_all_windows.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
