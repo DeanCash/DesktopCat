@@ -78,12 +78,12 @@ while running:
             if event.key == pygame.K_q:
                 running = False
                 break
-        
+
         if pygame.key.get_focused():
             print("FOCUSSED", total_frames)
 
     if not cat:
-        cat = Cat(screen, clock, Vector2(1800, 700), cfg_cat_type)
+        cat = Cat(screen, clock, Vector2(1200, 500), cfg_cat_type)
 
     screen.fill(transparent_color)  # Transparent background
     #? game functionality under here
