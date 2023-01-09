@@ -6,6 +6,8 @@ test.*
 move_window.py
 get_all_windows.py
 
+*.zip
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

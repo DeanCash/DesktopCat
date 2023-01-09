@@ -1,5 +1,5 @@
-You can modify the 'settings.json' to your liking,
-these are some of the color options for the cat
+You can modify the 'settings.ini' to your liking,
+these are all the cat types/colors you can choose from!
 
 - Black
 - Black_BlueEyes_PinkNose

@@ -8,7 +8,9 @@ class SpriteAtlas:
         self.file_path = path
         self.atlas = atlas_surface
         self.sprite_size = sprite_size
-        self.index = Vector2(0, 0)
+        # setting default value to negative size of sprite size, so now if get_next_sprite gets called
+        # it will always get the first sprite from atlas without need for a previous get_sprite_at call
+        self.index = Vector2(0, 0) - sprite_size
 
         size = self.atlas.get_size()
         self.__bounds = Vector2(size[0] // self.sprite_size[0], size[1] // self.sprite_size[1])

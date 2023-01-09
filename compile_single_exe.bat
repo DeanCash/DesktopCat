@@ -1,0 +1,1 @@
+pyinstaller --noconsole --onefile --strip .\main.py --name=Desktop_Cat_build --icon=assets\icon.ico

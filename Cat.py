@@ -33,15 +33,10 @@ class Cat:
         self.set_type(self.type)
 
     def set_type(self, new_cat_type: CatType) -> None:
-        # scale = cfg_cat_scale
-
-        sprite_atlas_path = new_cat_type.value[0] if os.path.exists(new_cat_type.value[0]) else os.path.join(sprites_dir, new_cat_type.value[0])
+        sprite_atlas_path = new_cat_type.value[0] if os.path.exists(new_cat_type.value[0]) else os.path.join(SPRITES_DIR, new_cat_type.value[0])
         sprite_atlas = pygame.image.load(sprite_atlas_path).convert_alpha()
-        # size = sprite_atlas.get_size()
 
         self.__sprite_atlas = SpriteAtlas(sprite_atlas_path, sprite_atlas, CAT_SPRITE_SIZE)
-
-        # self.__cat_sprite = pygame.transform.scale(self.__sprite_atlas.atlas, (size[0] * scale, size[1] * scale))
         self.__set_animation_array()
 
     def __set_animation_array(self) -> None:
@@ -52,14 +47,14 @@ class Cat:
             # temp_size: tuple[int, int] = temp_surface.get_size()
             # self.__animation_sprites_len = 1
 
-            # temp_array.append(pygame.transform.scale(temp_surface, (temp_size[0] * cfg_cat_scale, temp_size[1] * cfg_cat_scale)))
+            # temp_array.append(pygame.transform.scale(temp_surface, (temp_size[0] * CFG_CAT_SCALE, temp_size[1] * CFG_CAT_SCALE)))
             # for i in range(3):
             #     self.__animation_sprites_len += 1
             #     temp_surface = self.__sprite_atlas.get_next_sprite()
             #     temp_size: tuple[int, int] = temp_surface.get_size()
 
-            #     temp_array.append(pygame.transform.scale(temp_surface, (temp_size[0] * cfg_cat_scale, temp_size[1] * cfg_cat_scale)))
-            temp_array = self.__sprite_atlas.get_sprites_onward_scaled((0, 3), 4, cfg_cat_scale)
+            #     temp_array.append(pygame.transform.scale(temp_surface, (temp_size[0] * CFG_CAT_SCALE, temp_size[1] * CFG_CAT_SCALE)))
+            temp_array = self.__sprite_atlas.get_sprites_onward_scaled((0, 3), 4, CFG_CAT_SCALE)
             # self.__animation_sprites_len = len(temp_array)
 
         self.__animation_sprites = cycle(temp_array)
@@ -82,19 +77,10 @@ class Cat:
                 self.__cat_sprite = next(self.__animation_sprites_cycle)
                 self.__ticks_passed = 0.0
                 self._i += 1
-            # ? For freezing after animation done
+            # ? Uncomment to freeze cat after first cycle of animation is done
             # if self._i >= self.__animation_sprites_len - 1:
             #     self.__freeze_sprite = True
             #     print(self._i)
 
-        # print(self.clock.get_time())
-        # sprite = self.__sprite_atlas.get_sprite_at(Vector2(0, 1))
-        # self.screen.blit(sprite, Vector2(600, 600))
-        # sprite = self.__sprite_atlas.get_next_sprite()
-        # self.screen.blit(sprite, Vector2(650, 600))
-
         self.screen.blit(self.__cat_sprite, self.position)
-
-        # self.screen.blit(self.__sprite_atlas.atlas, Vector2(80, 80))
-        # self.screen.blit(self.__cat_sprite, self.position)
         self.__ticks_passed += self.clock.get_time() / 1000
