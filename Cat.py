@@ -1,5 +1,3 @@
-from copy import deepcopy
-import re
 from CatMisc import CatType, CatState
 from SpriteAtlasManager import SpriteAtlas
 from Constants import *
