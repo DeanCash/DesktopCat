@@ -36,7 +36,6 @@ def main():
                            win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
     # Set window transparency color
     win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*transparent_color), 0, win32con.LWA_COLORKEY)
-    # onTop(pygame.display.get_wm_info()['window'])
 
     start_x = start_y = 50 if SANDBOX_MODE else 0
     win32gui.SetWindowPos(pygame.display.get_wm_info()['window'], win32con.HWND_TOPMOST, start_x, start_y, 0, 0, win32con.SWP_NOSIZE)
@@ -61,7 +60,8 @@ def main():
                     break
 
             if pygame.key.get_focused():
-                print("FOCUSSED", total_frames)
+                # when window has focus
+                pass
 
         if not cat:
             cat = Cat(screen, clock, Vector2(1200, 500), cfg_cat_type)

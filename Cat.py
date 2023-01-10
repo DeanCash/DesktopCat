@@ -1,7 +1,7 @@
 from copy import deepcopy
 import re
 from CatMisc import CatType, CatState
-from SpriteAtlas import SpriteAtlas
+from SpriteAtlasManager import SpriteAtlas
 from Constants import *
 
 import pygame
