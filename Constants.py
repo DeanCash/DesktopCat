@@ -12,13 +12,18 @@ FPS = 60
 
 ASSETS_DIR: str = "assets"
 SPRITES_DIR: str = __join(ASSETS_DIR, "sprites_sheets")
+FONTS_DIR: str = __join(ASSETS_DIR, "fonts")
 CONFIG_DIR: str = "config"
 SETTINGS_FILE: str = "settings.ini"
 ICON_FILE = __join(ASSETS_DIR, "icon.ico")
+DEFAULT_FONT_FILE = __join(FONTS_DIR, "CatFont.otf")
+DEFAULT_FONT_SIZE = 36
+DEFAULT_COLOR = pygame.Color(255, 255 ,255)
 
 try:
     settings = __load_init(__join(CONFIG_DIR, SETTINGS_FILE))
 except FileNotFoundError as e:
+    # in future will handle this
     raise FileNotFoundError(e)
 
 for cattype in CatType:

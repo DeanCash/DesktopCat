@@ -24,28 +24,32 @@ def main():
         screen = pygame.display.set_mode((current_w, current_h)) # For borderless, use pygame.NOFRAME
     pygame.display.set_caption(WINDOW_TITLE)
     pygame.display.set_icon(pygame.image.load(ICON_FILE).convert_alpha())
-    
+
+    default_font = pygame.font.Font(DEFAULT_FONT_FILE, DEFAULT_FONT_SIZE)
     clock = pygame.time.Clock()
 
     dark_red = pygame.color.Color(240, 240, 255)
 
     # Getting the window handle
-    hwnd = pygame.display.get_wm_info()["window"]
-    # set the window to be transparent
+    hwnd = pygame.display.get_wm_info()['window']
+    # allows the window to be drawn using alpha blending
     win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE,
                            win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
     # Set window transparency color
     win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*transparent_color), 0, win32con.LWA_COLORKEY)
 
     start_x = start_y = 50 if SANDBOX_MODE else 0
-    win32gui.SetWindowPos(pygame.display.get_wm_info()['window'], win32con.HWND_TOPMOST, start_x, start_y, 0, 0, win32con.SWP_NOSIZE)
+    win32gui.SetWindowPos(hwnd, win32con.HWND_TOPMOST, start_x, start_y, 0, 0, win32con.SWP_NOSIZE)
 
     # * Game stuff here
 
     total_frames = 0
     running = True
+    ran_once = False
 
     cat = None
+    fps_text = default_font.render(f"FPS xx", False, DEFAULT_COLOR, None)
+    fps_text_width = fps_text.get_width()
 
     while running:
         for event in pygame.event.get():
@@ -72,6 +76,16 @@ def main():
         cat.render()
 
         #? - - - - - - - - - - - - - - - #
+        # fps counter, for if SANDBOX_MODE is enabled
+        if SANDBOX_MODE:
+            # refresh the fps counter 4 times a frame instead of 60
+            if (total_frames % 15 == 0) or (not ran_once):
+                get_time = clock.get_time()
+                fps_text = default_font.render(f"FPS {int(1000 / (get_time if get_time != 0 else 1))}", False, DEFAULT_COLOR, None)
+                ran_once = True
+            # using the walrus operator to save an extra function call to get_height
+            screen.blit(fps_text, (screen.get_width() - (fps_text_width + (fps_text_height := fps_text.get_height())), fps_text_height))
+
         # time and other stuff
         clock.tick(FPS)
         pygame.display.update()
