@@ -8,10 +8,9 @@ from pygame.time import Clock
 
 import os
 from itertools import cycle
-from typing_extensions import Self
 
 class Cat:
-    def __init__(self, screen: Surface, clock: Clock, position: Vector2, cattype: CatType) -> Self:
+    def __init__(self, screen: Surface, clock: Clock, position: Vector2, cattype: CatType):
         self.screen = screen
         self.clock = clock
         self.position = position

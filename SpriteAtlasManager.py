@@ -1,10 +1,9 @@
 import pygame
 from pygame import Surface, Vector2
 from typing import Union, Tuple
-from typing_extensions import Self
 
 class SpriteAtlas:
-    def __init__(self, path: str, atlas_surface: Surface, sprite_size: Vector2) -> Self:
+    def __init__(self, path: str, atlas_surface: Surface, sprite_size: Vector2):
         self.file_path = path
         self.atlas = atlas_surface
         self.sprite_size = sprite_size

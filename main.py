@@ -1,7 +1,7 @@
 import pygame
 from pygame import Vector2
 
-import sys, os
+import sys
 
 import win32api
 import win32con
@@ -10,7 +10,6 @@ import win32gui
 from Constants import *
 from Logger import ErrorHandler
 from Cat import Cat
-from CatMisc import CatType
 
 
 def main():

@@ -1,7 +1,6 @@
 import pygame
 
 from os.path import join as __join
-from json import load as __load
 
 from CatMisc import CatType
 from pygame import Vector2
