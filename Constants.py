@@ -43,7 +43,7 @@ SANDBOX_MODE: bool = settings['sandbox_mode']
 
 PROGRAM_NAME = "Desktop_Cat"
 
-VERSION_TYPE: str = "ALPHA"
+VERSION_TYPE: str = "ALPHA_Build"
 VERSION_NUMBER: int | float = 0.1
 VERSION = f"{VERSION_TYPE} v{VERSION_NUMBER}"
 

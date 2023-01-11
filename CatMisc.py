@@ -1,12 +1,17 @@
-from enum import Enum, auto
+from enum import Enum as _Enum
+from enum import auto as _auto
 
-class CatState(Enum):
-    Idle = auto(),
-    Walking = auto(),
-    Sprinting = auto(),
-    Resting = auto(),
+class CatState(_Enum):
+    Idle = _auto(),
+    Walking = _auto(),
+    Sprinting = _auto(),
+    Resting = _auto(),
 
-class CatType(Enum):
+class CatDirection(_Enum):
+    Left = _auto(),
+    Right = _auto(),
+
+class CatType(_Enum):
     Black = "black_000.png",
     Black_BlueEyes_PinkNose = "black_001.png",
     Black_YellowEyes = "black_002.png",

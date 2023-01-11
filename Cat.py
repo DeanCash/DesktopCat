@@ -1,6 +1,7 @@
-from CatMisc import CatType, CatState
+from CatMisc import CatType, CatState, CatDirection
 from SpriteAtlasManager import SpriteAtlas
 from Constants import *
+from CatAI import CatBehaviour
 
 import pygame
 from pygame import Surface, Rect, Vector2
@@ -16,6 +17,8 @@ class Cat:
         self.position = position
         self.type = cattype
         self.state = CatState.Idle
+        self.facing = CatDirection.Left
+        self.AI = CatBehaviour(self)
         self.__cat_sprite: Surface = None
         self.__sprite_atlas: SpriteAtlas = None
         self.__animation_sprites: cycle[list[Surface]] = None
@@ -28,6 +31,9 @@ class Cat:
         self._i = 0
 
         self.set_type(self.type)
+
+    def __str__(self) -> str:
+        return f"<[{self.__class__.__name__}] ({self.position.x}, {self.position.y}) {self.type.name}>"
 
     def set_type(self, new_cat_type: CatType) -> None:
         sprite_atlas_path = new_cat_type.value[0] if os.path.exists(new_cat_type.value[0]) else os.path.join(SPRITES_DIR, new_cat_type.value[0])
@@ -58,9 +64,6 @@ class Cat:
         self.__animation_sprites_cycle = cycle(self.__make_cycling_from_single(temp_array))
         self.__cat_sprite = next(self.__animation_sprites)
 
-        # TODO scaling of cat
-        # pygame.transform.scale(self.__sprite_atlas.atlas, (size[0] * scale, size[1] * scale))
-
     def __make_cycling_from_single(self, array: list[Surface]):
         temp_cycle_array = array.copy()
         arr_copy_rev = list(reversed(array.copy()))
@@ -79,5 +82,6 @@ class Cat:
             #     self.__freeze_sprite = True
             #     print(self._i)
 
+        self.AI.decision()
         self.screen.blit(self.__cat_sprite, self.position)
         self.__ticks_passed += self.clock.get_time() / 1000
