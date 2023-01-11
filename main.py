@@ -19,9 +19,9 @@ def main():
     current_w, current_h = window_info.current_w, window_info.current_h
 
     if not SANDBOX_MODE:
-        screen = pygame.display.set_mode((current_w, current_h), pygame.NOFRAME) # For borderless, use pygame.NOFRAME
+        screen = pygame.display.set_mode((current_w, current_h - 50), pygame.NOFRAME) # For borderless, use pygame.NOFRAME
     else:
-        screen = pygame.display.set_mode((current_w, current_h)) # For borderless, use pygame.NOFRAME
+        screen = pygame.display.set_mode((current_w, current_h - 50)) # For borderless, use pygame.NOFRAME
     pygame.display.set_caption(WINDOW_TITLE)
     pygame.display.set_icon(pygame.image.load(ICON_FILE).convert_alpha())
 
@@ -68,7 +68,7 @@ def main():
                 pass
 
         if not cat:
-            cat = Cat(screen, clock, Vector2(1200, 500), cfg_cat_type)
+            cat = Cat(screen, clock, Vector2(int(current_w * 0.75), int(current_h * 0.60)), cfg_cat_type)
 
         screen.fill(transparent_color)  # Transparent background
         #? game functionality under here

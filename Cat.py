@@ -21,7 +21,7 @@ class Cat:
         self.__sprite_atlas: SpriteAtlas = None
         self.__animation_sprites: cycle[list[Surface]] = None
         self.__animation_sprites_cycle: cycle[list[Surface]] = None
-        # self.__animation_sprites_len = 0
+        self.__animation_sprites_len = 0
         self.__animation_frame_duration = 0.4
         self.__animation_frame_duration = 0.18
         self.__freeze_sprite = False
@@ -53,7 +53,7 @@ class Cat:
 
             #     temp_array.append(pygame.transform.scale(temp_surface, (temp_size[0] * CFG_CAT_SCALE, temp_size[1] * CFG_CAT_SCALE)))
             temp_array = self.__sprite_atlas.get_sprites_onward_scaled((0, 3), 4, CFG_CAT_SCALE)
-            # self.__animation_sprites_len = len(temp_array)
+            self.__animation_sprites_len = len(temp_array)
 
         self.__animation_sprites = cycle(temp_array)
         self.__animation_sprites_cycle = cycle(self.__make_cycling_from_single(temp_array))
