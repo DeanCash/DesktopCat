@@ -20,7 +20,7 @@ def main():
     if not SANDBOX_MODE:
         screen = pygame.display.set_mode((current_w, current_h - 50), pygame.NOFRAME) # For borderless, use pygame.NOFRAME
     else:
-        screen = pygame.display.set_mode((current_w, current_h - 50)) # For borderless, use pygame.NOFRAME
+        screen = pygame.display.set_mode((current_w, current_h - 50)) # For SANDBOX_MODE get a movable window
     pygame.display.set_caption(WINDOW_TITLE)
     pygame.display.set_icon(pygame.image.load(ICON_FILE).convert_alpha())
 
