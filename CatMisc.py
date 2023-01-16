@@ -2,10 +2,10 @@ from enum import Enum as _Enum
 from enum import auto as _auto
 
 class CatState(_Enum):
-    Idle = _auto(),
-    Walking = _auto(),
-    Sprinting = _auto(),
-    Resting = _auto(),
+    Idle = 1,
+    Walking = 2,
+    Sprinting = 1,
+    Resting = 1,
 
 class CatDirection(_Enum):
     Left = _auto(),

@@ -18,7 +18,7 @@ class Cat:
         self.type = cattype
         self.state = CatState.Idle
         self.facing = CatDirection.Left
-        self.AI = CatBehaviour(self)
+        self.ai = CatBehaviour(self)
         self.__cat_sprite: Surface = None
         self.__sprite_atlas: SpriteAtlas = None
         self.__animation_sprites: cycle[list[Surface]] = None
@@ -82,6 +82,8 @@ class Cat:
             #     self.__freeze_sprite = True
             #     print(self._i)
 
-        self.AI.decision()
+        self.ai.decision()
+        # make new method, to follow SOLID
+
         self.screen.blit(self.__cat_sprite, self.position)
         self.__ticks_passed += self.clock.get_time() / 1000
