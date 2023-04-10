@@ -1,3 +1,4 @@
+## Note: This project hasn't been finished (yet)
 # Desktop Cat
 
 > This project is heavily inspired by [Desktop Goose](https://samperson.itch.io/desktop-goose)
