@@ -23,7 +23,7 @@ Latest Release:
 
 **[Click](Release/)** to download latest Release
 
-### Installing from source code {#source-code}
+### Installing from source
 If you want to download the source code and run it directly instead you can clone it with git like this:
 
 ```bat
