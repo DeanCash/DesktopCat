@@ -1,4 +1,4 @@
-## Note: This project hasn't been finished (yet)
+## Note: This project hasn't been finished (yet)...
 # Desktop Cat
 
 > This project is heavily inspired by [Desktop Goose](https://samperson.itch.io/desktop-goose)
@@ -9,7 +9,7 @@ Well look no further, you found what you  were looking for!
 <!-- TODO: maybe some GIF here -->
 
 ## Installing Desktop Cat 
-> Note: Desktop Cat is currently only available on the `Windows` platform
+> Note: Desktop Cat is currently only available on `Windows`
 
 
 ## Release Build
