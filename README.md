@@ -4,7 +4,8 @@
 > This project is heavily inspired by [Desktop Goose](https://samperson.itch.io/desktop-goose)
 
 Do you want a cat that keeps you company on your desktop? A cat that walks and plays around, and sometimes even steals your windows?
-Well look no further, you found what you  were looking for!
+Well look no further, you found what you were looking for!
+![showcase banner](assets/showcase.gif)
 
 <!-- TODO: maybe some GIF here -->
 
